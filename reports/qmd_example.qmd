@@ -6,6 +6,9 @@ format:
     toc: true
     toc-depth: 2
 editor: source
+execute:
+  enabled: true
+  echo: false
 bibliography: references.bib
 ---
 
@@ -49,10 +52,10 @@ to further support this hypothesis.
 
 Suppose we were interested in looking in more closely at the province 
 with the highest spread (in terms of standard deviation) of horse populations. 
-We present the standard deviations in Table 1.
+We present the standard deviations in @tbl-horse.
 
 ```{python}
-#| label: tbl-planets
+#| label: tbl-horse
 #| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.
 horses_sd_table = pd.read_csv("../results/horses_sd.csv")
 largest_sd = horses_sd_table['Province'].values[0]
@@ -63,11 +66,11 @@ Note that we define standard deviation (of a sample) as
 
 $$s = \sqrt{\frac{\sum_{i=1}^N (x_i - \overline{x})^2}{N-1} }$$
 
-Additionally, note that in Table 1 we consider the sample standard deviation of the number of horses during the same time span as @fig-horse.
+Additionally, note that in @tbl-horse we consider the sample standard deviation of the number of horses during the same time span as @fig-horse.
 
 ![Horse populations for the province with the largest standard deviation.](../results/horse_pops_plot_largest_sd.png){#fig-horse-sd width=60%}
 
-In @fig-horse-sd we zoom in and look at the province of ???, which had the largest spread of values in terms of standard deviation.
+In @fig-horse-sd we zoom in and look at the province of `{python} largest_sd`, which had the largest spread of values in terms of standard deviation.
 
 ### References
 ::: {#refs}
